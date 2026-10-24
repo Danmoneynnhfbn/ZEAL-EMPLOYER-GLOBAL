@@ -1,0 +1,27 @@
+# The owner may change AI crawler access below.
+User-agent: *
+Allow: /
+Disallow: /book
+Disallow: /private
+Disallow: /PRIVATE_NOTES.md
+Disallow: /.env
+Disallow: /.env.example
+
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /book
+Disallow: /private
+Disallow: /PRIVATE_NOTES.md
+Disallow: /.env
+Disallow: /.env.example
+
+Sitemap: https://zealemployerglobal.com/sitemap.xml

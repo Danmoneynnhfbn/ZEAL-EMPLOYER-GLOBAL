@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.env
+.env.local
+.env.*.local
+!.env.example
+PRIVATE_NOTES.md
+screenshots/
+reference/
+.vscode/
+*.log
+.DS_Store
+Thumbs.db
+/ZEAL_BANnER.png
+/zeal employer icon.jpg
