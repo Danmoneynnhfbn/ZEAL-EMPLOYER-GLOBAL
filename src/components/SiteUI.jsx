@@ -138,7 +138,7 @@ export function SiteFooter() {
         <div><p className="eyebrow"><span>16</span> NEXT STEP / CONTACT</p><h2>Ready to land your next role?</h2><p className="footer-copy">Bring your ambition. We’ll help shape the story that takes it further.</p><Button to="/book">Start your career audit <ArrowRight size={16} /></Button></div>
         <motion.a className="drag-sticker" href="mailto:hello@zealemployerglobal.com" drag dragMomentum={false} aria-label="Email us directly"><span>&lt; EMAIL US &gt;</span><b>↗</b></motion.a>
       </div>
-      <div className="footer-contact"><span>{brand.location}</span><Link to="/where-we-work">Where we work</Link><Link to="/about">About</Link><Link to="/contact">Contact <ArrowRight size={14} /></Link><Link to="/privacy">Privacy</Link><Link to="/book">Book a call <ArrowRight size={14} /></Link><span className="footer-audience">Serving professionals in Nigeria, Ghana, Senegal, Côte d’Ivoire, Kenya, South Africa, the United Kingdom, the United States, and more.</span></div>
+      <div className="footer-contact"><span>{brand.location}</span><Link to="/where-we-work">Where we work</Link><Link to="/about">About</Link><Link to="/contact">Contact <ArrowRight size={14} /></Link><Link to="/privacy">Privacy</Link><Link to="/book">Book a call <ArrowRight size={14} /></Link><span className="footer-audience">Serving professionals in the United States, the United Kingdom, Canada, Australia, Germany, France, Japan, and the United Arab Emirates.</span></div>
       <div className="footer-menubar"><span>© {new Date().getFullYear()} Zeal Employer Global</span><span>LOCAL TIME {footerClock}</span><span>CAREER SERVICES / WORLDWIDE</span><a href="#top" aria-label="Back to top"><ArrowUp size={15} /></a></div>
     </footer>
   );
