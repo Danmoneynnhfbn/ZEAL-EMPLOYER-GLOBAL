@@ -59,6 +59,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid #e5322d; outline-offs
 .firework-burst--2 { top: 57%; left: 72%; }
 .firework-burst span { position: absolute; top: 0; left: 0; width: 4px; height: 8px; border-radius: 50%; }
 .intro-bike { position: absolute; top: -65px; left: -90px; width: 88px; height: 70px; pointer-events: none; animation: bike-travel 6s linear infinite; }
+.intro-bike--final { animation: bike-final-ride 2.4s cubic-bezier(.4, 0, .2, 1) 1 both; }
 .intro-bike--static { left: calc(50% - 44px); animation: none; }
 .intro-bike svg { display: block; width: 100%; height: 100%; overflow: visible; }
 .bike-wheel { transform-box: fill-box; transform-origin: center; animation: bike-wheel-spin .8s linear infinite; }
@@ -90,6 +91,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid #e5322d; outline-offs
 .skip-link { padding: 8px 0; border: 0; color: #aaa; background: transparent; cursor: pointer; font: 500 9px/1 'JetBrains Mono', monospace; }
 .skip-link:hover { color: #f4f4f2; }
 @keyframes bike-travel { from { left: -90px; } to { left: calc(100% + 90px); } }
+@keyframes bike-final-ride { from { left: -90px; } to { left: calc(100% + 90px); } }
 @keyframes bike-wheel-spin { to { rotate: 360deg; } }
 @keyframes rider-bob { to { translate: 0 -2px; } }
 @media (max-width: 520px) {

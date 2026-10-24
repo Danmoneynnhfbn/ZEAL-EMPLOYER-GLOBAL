@@ -3,7 +3,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { Scissors } from 'lucide-react';
 import { brand } from '../data/content.js';
 
-const LOAD_DURATION = 2600;
+const LOAD_DURATION = 12000;
 const FIREWORK_PARTICLES = Array.from({ length: 12 }, (_, index) => {
   const angle = (Math.PI * 2 * index) / 12;
   const distance = 34 + (index % 3) * 9;
@@ -16,6 +16,7 @@ const FIREWORK_PARTICLES = Array.from({ length: 12 }, (_, index) => {
 
 export default function Intro({ onEnter }) {
   const [progress, setProgress] = useState(0);
+  const [finalRide, setFinalRide] = useState(false);
   const [exiting, setExiting] = useState(false);
   const [celebrate, setCelebrate] = useState(false);
   const reduceMotion = useReducedMotion();
@@ -40,10 +41,10 @@ export default function Intro({ onEnter }) {
   };
 
   useEffect(() => {
-    if (progress !== 100 || exiting) return undefined;
-    const timer = window.setTimeout(leaveIntro, 15000);
+    if (progress !== 100 || exiting || finalRide) return undefined;
+    const timer = window.setTimeout(() => setFinalRide(true), 12000);
     return () => window.clearTimeout(timer);
-  }, [progress, exiting]);
+  }, [progress, exiting, finalRide]);
 
   useEffect(() => {
     if (progress !== 100 || reduceMotion) return undefined;
@@ -52,9 +53,15 @@ export default function Intro({ onEnter }) {
     return () => window.clearTimeout(timer);
   }, [progress, reduceMotion]);
 
+  useEffect(() => {
+    if (!finalRide || !reduceMotion || exiting) return undefined;
+    const timer = window.setTimeout(() => setExiting(true), 0);
+    return () => window.clearTimeout(timer);
+  }, [finalRide, reduceMotion, exiting]);
+
   return (
     <motion.main
-      className={`intro-screen${exiting ? ' intro-screen--leaving' : ''}`}
+      className={`intro-screen${finalRide ? ' intro-screen--final-ride' : ''}${exiting ? ' intro-screen--leaving' : ''}`}
       initial={reduceMotion ? false : { y: 0 }}
       animate={exiting ? { y: '-100%' } : { y: 0 }}
       transition={{ duration: reduceMotion ? 0 : 0.9, ease: [0.76, 0, 0.24, 1] }}
@@ -108,7 +115,12 @@ export default function Intro({ onEnter }) {
         <span>CUT ALONG LINE</span>
       </div>
       <div className="tear-line" aria-hidden="true">
-        <div className={`intro-bike${reduceMotion ? ' intro-bike--static' : ''}`}>
+        <div
+          className={`intro-bike${reduceMotion ? ' intro-bike--static' : ''}${finalRide ? ' intro-bike--final' : ''}`}
+          onAnimationEnd={(event) => {
+            if (event.animationName === 'bike-final-ride') leaveIntro();
+          }}
+        >
           <svg viewBox="0 0 140 112" fill="none">
             <g className="bike-wheel">
               <circle cx="34" cy="83" r="21" />
