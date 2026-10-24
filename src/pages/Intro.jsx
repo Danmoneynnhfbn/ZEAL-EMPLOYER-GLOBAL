@@ -51,6 +51,33 @@ export default function Intro({ onEnter }) {
         <span className="shape-crosshair">+</span>
       </div>
 
+      <motion.div
+        className="intro-bike"
+        aria-hidden="true"
+        initial={false}
+        animate={reduceMotion ? { x: '42vw' } : { x: ['-150px', 'calc(100vw + 150px)'] }}
+        transition={reduceMotion ? { duration: 0 } : { duration: 12, repeat: Infinity, ease: 'linear' }}
+      >
+        <svg viewBox="0 0 140 112" fill="none">
+          <g className="bike-wheel">
+            <circle cx="34" cy="83" r="21" />
+            <path d="M34 62v42M13 83h42M19 68l30 30m0-30L19 98" />
+          </g>
+          <g className="bike-wheel">
+            <circle cx="106" cy="83" r="21" />
+            <path d="M106 62v42M85 83h42M91 68l30 30m0-30L91 98" />
+          </g>
+          <path className="bike-frame" d="m34 83 31-35 17 35H34l18-18m13-17 18 17h13m-13 0 8-18h9" />
+          <circle className="bike-pedal" cx="65" cy="65" r="4" />
+          <g className="bike-rider">
+            <path className="rider-limbs" d="m63 47 15-5 9 10m-24-5 7 18 15 8m-15-8-14 13m14-13 17 4m-23-34 13 9" />
+            <path className="rider-shirt" d="m61 34 12-5 10 15-19 7-7-9z" />
+            <circle className="rider-head" cx="68" cy="23" r="7" />
+            <path className="rider-hair" d="M61 22c1-8 13-10 16-2l-4 1-3-3-5 4z" />
+          </g>
+        </svg>
+      </motion.div>
+
       <section className="intro-center" aria-label="Welcome">
         <div className="intro-counter" aria-live="off">
           <span className="counter-value">{String(progress).padStart(3, '0')}</span>

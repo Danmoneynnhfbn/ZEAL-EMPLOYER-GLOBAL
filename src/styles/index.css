@@ -53,6 +53,19 @@ button:focus-visible, a:focus-visible { outline: 2px solid #e5322d; outline-offs
 .shape-octagon { width: clamp(30px, 5vw, 62px); aspect-ratio: 1; top: 28%; right: 15%; clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%); }
 .shape-circle { width: clamp(17px, 2.5vw, 29px); aspect-ratio: 1; bottom: 25%; left: 20%; border-radius: 50%; }
 .shape-crosshair { position: absolute; right: 22%; bottom: 23%; color: #777; font: 300 35px/1 'JetBrains Mono', monospace; }
+.intro-bike { position: absolute; z-index: 1; top: 62%; left: 0; width: 140px; height: 112px; pointer-events: none; }
+.intro-bike svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.bike-wheel { transform-box: fill-box; transform-origin: center; animation: bike-wheel-spin .8s linear infinite; }
+.bike-wheel circle, .bike-wheel path, .bike-frame, .bike-rider path { stroke: #f4f4f2; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.bike-wheel circle { fill: #0a0a0a; }
+.bike-wheel path { stroke: #777; stroke-width: 1; }
+.bike-frame { stroke: #e5322d; stroke-width: 3; }
+.bike-pedal { fill: #e5322d; }
+.bike-rider { transform-box: fill-box; transform-origin: center; animation: rider-bob .32s ease-in-out infinite alternate; }
+.bike-rider .rider-limbs { stroke: #f3d762; stroke-width: 4; }
+.bike-rider .rider-shirt { fill: #e5322d; stroke: #e5322d; }
+.bike-rider .rider-head { fill: #d8a27d; stroke: none; }
+.bike-rider .rider-hair { fill: #f4f4f2; stroke: none; }
 .intro-center { position: absolute; top: 50%; left: 50%; width: min(710px, calc(100% - 44px)); transform: translate(-50%, -50%); text-align: center; }
 .intro-counter { display: flex; align-items: flex-start; justify-content: center; gap: 4px; margin-bottom: 12px; font-family: 'JetBrains Mono', monospace; }
 .counter-value { font-size: clamp(34px, 6vw, 58px); line-height: 1; font-weight: 500; font-variant-numeric: tabular-nums; }
@@ -72,10 +85,13 @@ button:focus-visible, a:focus-visible { outline: 2px solid #e5322d; outline-offs
 .skip-link { padding: 8px 0; border: 0; color: #aaa; background: transparent; cursor: pointer; font: 500 9px/1 'JetBrains Mono', monospace; }
 .skip-link:hover { color: #f4f4f2; }
 @keyframes cut-travel { from { left: -10%; } to { left: 110%; } }
+@keyframes bike-wheel-spin { to { rotate: 360deg; } }
+@keyframes rider-bob { to { translate: 0 -2px; } }
 @media (max-width: 520px) {
   .intro-status { font-size: 8px; }
   .shape-diamond { top: 25%; left: 10%; }
   .shape-octagon { top: 30%; right: 10%; }
+  .intro-bike { top: 64%; width: 105px; height: 84px; }
   .tear-instruction { top: 75%; }
   .tear-line { top: calc(75% + 23px); }
   .enter-button { right: 22px; bottom: 14%; }
