@@ -367,7 +367,7 @@ main { display: block; }
 .footer-main .button { margin-top: 12px; }
 .footer-main .button--primary { color: var(--red); background: white; border-color: white; }
 .footer-main .button--primary:hover { color: white; background: transparent; border-color: white; }
-.drag-sticker { display: grid; width: 123px; height: 123px; flex: 0 0 auto; align-content: center; justify-items: center; rotate: 8deg; color: var(--ink); background: var(--yellow); box-shadow: 4px 7px 0 #0008; cursor: grab; font: 600 10px var(--mono); }
+.drag-sticker { display: grid; width: 123px; height: 123px; flex: 0 0 auto; align-content: center; justify-items: center; rotate: 8deg; color: var(--ink); background: var(--yellow); box-shadow: 4px 7px 0 #0008; cursor: grab; font: 600 10px var(--mono); text-decoration: none; }
 .drag-sticker:active { cursor: grabbing; }
 .drag-sticker b { margin-top: 8px; color: var(--red); font-size: 18px; }
 .footer-contact { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 22px 0; color: #ffe1df; font-size: 10px; }

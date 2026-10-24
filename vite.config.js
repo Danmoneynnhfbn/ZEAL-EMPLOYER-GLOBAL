@@ -10,6 +10,7 @@ export default defineConfig(({ mode }) => {
     throw new Error('VITE_SITE_URL must be a public HTTPS URL, never localhost.');
   }
   return {
+    base: '/',
     plugins: [
       react(),
       {
