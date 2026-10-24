@@ -4,13 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f4f4f2" />
+    <style>
+      :root { color-scheme: light; background: #f4f4f2; color: #0a0a0a; font-family: Arial, sans-serif; }
+      body { min-width: 320px; min-height: 100vh; margin: 0; }
+      .seo-fallback { min-height: 100vh; background: #f4f4f2; }
+      .seo-fallback__header, .seo-fallback__footer { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px clamp(20px, 5vw, 72px); border-bottom: 1px solid #d6d4cd; font: 600 11px/1.5 Arial, sans-serif; }
+      .seo-fallback__header a, .seo-fallback__footer a { color: inherit; text-decoration: none; }
+      .seo-fallback__nav { display: flex; flex-wrap: wrap; gap: 18px; }
+      .seo-fallback__status { display: inline-flex; align-items: center; gap: 8px; color: #65635f; font-size: 10px; }
+      .seo-fallback__status i { width: 7px; height: 7px; border-radius: 50%; background: #e5322d; animation: fallback-pulse 1.2s ease-in-out infinite alternate; }
+      .seo-fallback__main { max-width: 1050px; min-height: 60vh; margin: auto; padding: clamp(72px, 14vh, 150px) clamp(24px, 9vw, 120px); }
+      .seo-fallback__eyebrow { color: #e5322d; font: 600 10px/1.5 monospace; letter-spacing: .08em; }
+      .seo-fallback__main h1 { max-width: 900px; margin: 18px 0; font-size: clamp(42px, 8vw, 86px); line-height: .98; letter-spacing: -.055em; }
+      .seo-fallback__main p { max-width: 600px; color: #55534e; font-size: clamp(15px, 2vw, 18px); line-height: 1.7; }
+      .seo-fallback__main h2 { margin-top: 36px; font-size: 22px; }
+      .seo-fallback__main h3 { font-size: 16px; }
+      .seo-fallback__main ul { padding-left: 22px; line-height: 1.8; }
+      .seo-fallback__footer { border-top: 1px solid #d6d4cd; border-bottom: 0; color: #65635f; }
+      @keyframes fallback-pulse { to { opacity: .35; } }
+      @media (max-width: 620px) { .seo-fallback__header { align-items: flex-start; flex-direction: column; gap: 12px; } .seo-fallback__nav { gap: 8px 14px; } .seo-fallback__main { min-height: 58vh; } .seo-fallback__footer { align-items: flex-start; flex-direction: column; gap: 8px; } }
+      @media (prefers-reduced-motion: reduce) { .seo-fallback__status i { animation: none; } }
+    </style>
     <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" /></noscript>
     <title>Zeal Employer Global | Your Zeal. Their Next Hire.</title>
   </head>
   <body>
